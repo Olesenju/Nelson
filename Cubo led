@@ -1,0 +1,250 @@
+#include <FastLED.h>
+
+#define NUM_LEDS 16
+#define DATA_TIRA_1 12
+#define DATA_TIRA_2 11
+#define DATA_TIRA_3 10
+#define DATA_TIRA_4 9
+
+CRGB tira1[NUM_LEDS];
+CRGB tira2[NUM_LEDS];
+CRGB tira3[NUM_LEDS];
+CRGB tira4[NUM_LEDS];
+
+void setup(){
+  FastLED.addLeds<WS2812B, DATA_TIRA_1, RGB>(tira1, NUM_LEDS);
+  FastLED.addLeds<WS2812B, DATA_TIRA_2, RGB>(tira2, NUM_LEDS);
+  FastLED.addLeds<WS2812B, DATA_TIRA_3, RGB>(tira3, NUM_LEDS);
+  FastLED.addLeds<WS2812B, DATA_TIRA_4, RGB>(tira4, NUM_LEDS);
+}
+
+void loop(){
+  int indicemaximo = NUM_LEDS - 1;
+
+  
+  for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[i] = CRGB::Red;
+    tira2[indicemaximo - i] = CRGB::Red;
+    tira3[i] = CRGB::Red;
+    tira4[indicemaximo - i] = CRGB::Red;
+    delay(200);
+    FastLED.show();
+    }
+    delay(100);
+    off(tira1);
+    off(tira2);
+    off(tira3);
+    off(tira4);
+    delay(500);
+
+    
+      for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Blue;
+    tira2[i] = CRGB::Blue;
+    tira3[indicemaximo - i] = CRGB::Blue;
+    tira4[i] = CRGB::Blue;
+    delay(200);
+    FastLED.show();
+    }
+    delay(100);
+    off(tira1);
+    off(tira2);
+    off(tira3);
+    off(tira4);
+    delay(500);
+
+    
+          for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Yellow;
+    tira2[i] = CRGB::Yellow;
+    tira3[indicemaximo - i] = CRGB::Yellow;
+    tira4[i] = CRGB::Yellow;
+    delay(1);
+    FastLED.show();
+          }delay(3000);
+    off(tira1);
+    off(tira2);
+    off(tira3);
+    off(tira4);
+    delay(500);
+
+    
+          for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira1);
+    delay(10);
+    
+          for (int i = 0; i < NUM_LEDS; i ++){
+    tira2[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira2);
+    delay(10);
+
+              for (int i = 0; i < NUM_LEDS; i ++){
+    tira3[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira3);
+    delay(10);
+
+          for (int i = 0; i < NUM_LEDS; i ++){
+    tira4[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira4);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira1);
+    delay(10);
+    
+          for (int i = 0; i < NUM_LEDS; i ++){
+    tira2[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira2);
+    delay(10);
+
+              for (int i = 0; i < NUM_LEDS; i ++){
+    tira3[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira3);
+    delay(10);
+
+          for (int i = 0; i < NUM_LEDS; i ++){
+    tira4[indicemaximo - i] = CRGB::Green;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira4);
+    delay(10);
+
+///////////////////////////////////////////////////////////
+for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Orange;
+    tira2[i] = CRGB::Orange;
+    tira3[indicemaximo - i] = CRGB::Orange;
+    tira4[i] = CRGB::Orange;
+    delay(1);
+    FastLED.show();
+          }delay(3000);
+    off(tira1);
+    off(tira2);
+    off(tira3);
+    off(tira4);
+    delay(500);
+
+    /////////////////////////////////////////////////////////////
+
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira4[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira4);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira3[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira3);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira2[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira2);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira1);
+    delay(10);
+
+     for (int i = 0; i < NUM_LEDS; i ++){
+    tira4[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira4);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira3[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira3);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira2[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira2);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Purple;
+    delay(1);
+    FastLED.show();
+          }delay(300);
+    off(tira1);
+    delay(10);
+
+    for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[i] = CRGB::Red;
+    tira2[indicemaximo - i] = CRGB::Red;
+    tira3[i] = CRGB::Red;
+    tira4[indicemaximo - i] = CRGB::Red;
+    delay(200);
+    FastLED.show();
+    }
+for (int i = 0; i < NUM_LEDS; i ++){
+    tira1[indicemaximo - i] = CRGB::Brown;
+    tira2[i] = CRGB::Brown;
+    tira3[indicemaximo - i] = CRGB::Brown;
+    tira4[i] = CRGB::Brown;
+    delay(200);
+    FastLED.show();
+    }
+    delay(100);
+    off(tira1);
+    off(tira2);
+    off(tira3);
+    off(tira4);
+    delay(500);
+    
+}
+void off (CRGB tira[]){
+  for (int i = 0; i < NUM_LEDS; i++){
+    tira1[i] = CRGB::Black;
+    tira2[i] = CRGB::Black;
+    tira3[i] = CRGB::Black;
+    tira4[i] = CRGB::Black;
+  }
+  FastLED.show();
+}
