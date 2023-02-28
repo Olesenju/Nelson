@@ -1,0 +1,27 @@
+
+#include <AFMotor.h>
+#include <Servo.h>
+Servo miServo;
+int pinServo = 9;
+int tiempo=60000;
+int x=360; //grados a buscar
+int senx=0;
+
+AF_DCMotor motor(1); //tipo y numero de motor
+
+void setup() {
+  Serial.begin(9600);         
+  motor.setSpeed(70); //velocidad del motor
+miServo.attach(pinServo);
+}
+
+void loop() {
+ seno();
+
+}
+void seno(){
+for (int i = 0 ;i < x ;i++){
+  senx=(0.01745*i)*90;
+miServo.write(senx);  
+}
+}
