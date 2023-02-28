@@ -25,3 +25,25 @@ for (int i = 0 ;i < x ;i++){
 miServo.write(senx);  
 }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////
+TODO ESTO ES UN PROTOTIPO PARA HACER LAS EQUIVALENCIAS DE GRADOS 
+
+void seno() {
+  for (int j = 0; j < x; j++) {
+    if (j <= 180)
+    {
+      for (int i = 0; i < x; i++) {
+        senx = (0.01745 * i) * 90;
+        miServo.write(senx);
+      }
+    }
+    if (j >= 190)
+
+    {
+      for (int i = 0; i < x; i++) {
+        senx = ((0.01745 * i) * -90) + 90;
+        miServo.write(senx);
+      }
+    }
+  }
+}
