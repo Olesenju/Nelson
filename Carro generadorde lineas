@@ -1,15 +1,14 @@
 
-
 #include <AFMotor.h>
 #include <Servo.h>
 Servo miServo;
 int pinServo = 9;
-int tiempo = 60000; //tiempo de grafica completa
-int x = 360;  //grados a buscar
+int tiempo = 60000;  //tiempo de grafica completa
+int x = 360;         //grados a buscar
 int senx = 0;
-int tiempogrado = 1666; // (tiempo/grados)10  para encontrar el valor por grado recuerda que vamos de 10 en 10
-int gradosservo= 0;
-float a_radianes=0;
+int tiempogrado = 1666;  // (tiempo/grados)10  para encontrar el valor por grado recuerda que vamos de 10 en 10
+int gradosservo = 0;
+float a_radianes = 0;
 
 AF_DCMotor motor(1);  //tipo y numero de motor
 
@@ -20,33 +19,35 @@ void setup() {
 }
 
 void loop() {
-  for (int a = 0; a < x; a=a+10) {  //a=valor de grados
-  Serial.println(a);
+  for (int a = 1; a < x; a = a + 9) {  //a=valor de grados
+
     if (a <= 90) {
-      a_radianes= (a*3.1416)/180; //convertir radianes
-      gradosservo = (sin(a_radianes) * 90) + 35;
-      miServo.write(gradosservo); //mover servo
+      a_radianes = (a * 3.1416) / 180;  //convertir grados a radianes
+      gradosservo = (sin(a_radianes) * 90) + 32.5;
+      miServo.write(gradosservo);  //mover servo
       Serial.println(gradosservo);
-      delay(tiempogrado);      
+      delay(tiempogrado);
+    }
+    if ((a >= 90) && (a <= 180)) {
+      a_radianes = (a * 3.1416) / 180;  //convertir grados a radianes
+      gradosservo = (sin(a_radianes) * 90) + 32.5;
+      miServo.write(gradosservo);  //mover servo
+      Serial.println(gradosservo);
+      delay(tiempogrado);
+    }
+    if ((a >= 180) && (a <= 270)) {
+      a_radianes = (a * 3.1416) / 180;  //convertir grados a radianes
+      gradosservo = (sin(a_radianes) * 90) + 32.5;
+      miServo.write(gradosservo);  //mover servo
+      Serial.println(gradosservo);
+      delay(tiempogrado);
+    }
+    if ((a >= 270) && (a <= 360)) {
+      a_radianes = (a * 3.1416) / 180;  //convertir grados a radianes
+      gradosservo = (sin(a_radianes) * 90) + 32.5;
+      miServo.write(gradosservo);  //mover servo
+      Serial.println(gradosservo);
+      delay(tiempogrado);
     }
   }
 }
-// void seno() {
-// }
-// // for (int j = 0; j < x; j++) {
-// //   if (j <= 180)
-// //   {
-// //     for (int i = 0; i < x; i++) {
-// //       senx = (0.01745 * i) * 90;
-// //       miServo.write(senx);
-// //     }
-// //   }
-// //   if (j >= 190)
-
-// //   {
-// //     for (int i = 0; i < x; i++) {
-// //       senx = ((0.01745 * i) * -90) + 90;
-// //       miServo.write(senx);
-// //     }
-// //   }
-// // }
